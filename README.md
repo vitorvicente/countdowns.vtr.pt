@@ -1,2 +1,11 @@
 # countdowns.vtr.pt
-Public Portal for all my Countdowns
+## Portal Page for all my Countdowns
+
+##### This is the eigth part of a 100 day coding challenge focused on web-development
+
+###### Day 0-88
+- Working on Other Projects
+
+###### Day 89
+- Initial File Upload
+- License & README
