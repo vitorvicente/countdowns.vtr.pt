@@ -48,6 +48,7 @@
               <div class="card-body">
                 <h3 class="card-title"><a href="#">100 Days of Coding!</a></h3>
                 <p>Countdown until my 100 Days of Coding challenge ends!</p>
+				<p class="counter" id="count2"></p>
               </div>
             </div>
           </div>
@@ -56,6 +57,7 @@
               <div class="card-body">
 				<h3 class="card-title"><a href="#">Classes End</a></h3>
                 <p>Countdown until the end of the semester</p>
+				<p class="counter" id="count1"></p>
               </div>
             </div>
           </div>
@@ -86,6 +88,43 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Timer Scripts -->
+  <script> 
+    var deadline = new Date("May 10, 2020 00:00:00").getTime(); 
+    var x = setInterval(function() { 
+      var now = new Date().getTime(); 
+      var t = deadline - now; 
+      var days = Math.floor(t / (1000 * 60 * 60 * 24)); 
+      var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+      var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
+      var seconds = Math.floor((t % (1000 * 60)) / 1000); 
+    
+	  document.getElementById("count1").innerHTML = days + " Days " + hours + ":" + minutes + ":" + seconds; 
+      if (t < 0) { 
+          clearInterval(x); 
+          document.getElementById("count1").innerHTML = "Countdown Over"; 
+      } 
+    }, 1000); 
+  </script>
+  
+  <script> 
+    var deadline2 = new Date("February 26, 2020 00:00:00").getTime(); 
+    var x2 = setInterval(function() { 
+      var now2 = new Date().getTime(); 
+      var t2 = deadline2 - now2; 
+      var days2 = Math.floor(t2 / (1000 * 60 * 60 * 24)); 
+      var hours2 = Math.floor((t2%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+      var minutes2 = Math.floor((t2 % (1000 * 60 * 60)) / (1000 * 60)); 
+      var seconds2 = Math.floor((t2 % (1000 * 60)) / 1000); 
+    
+	  document.getElementById("count2").innerHTML = days2 + " Days " + hours2 + ":" + minutes2 + ":" + seconds2; 
+      if (t < 0) { 
+          clearInterval(x); 
+          document.getElementById("count2").innerHTML = "Countdown Over"; 
+      } 
+    }, 1000); 
+  </script> 
 
 </body>
 
