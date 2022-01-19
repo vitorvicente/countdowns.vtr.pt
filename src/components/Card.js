@@ -38,7 +38,7 @@ const StyledCard = styled.div`
 	
 `;
 
-const Card = ({title, description, timeCreated, timeEnds}) => {
+const Card = ({title, description, timeEnds}) => {
 	const [ days, setDays ] = useState("");
 	const [ hours, setHours ] = useState("");
 	const [ minutes, setMinutes ] = useState("");
@@ -52,11 +52,10 @@ const Card = ({title, description, timeCreated, timeEnds}) => {
 	const countDown = () => {
 		const difference = timeEnds.toDate().getTime() - (new Date()).getTime();
 		
-		if (difference > 0) {
+		if (difference > 0)
 			setIsDone(false);
-		}
 		
-		setDays(Math.floor(difference / (1000 * 60 * 60 * 24))); 
+		setDays(Math.floor(difference / (1000 * 60 * 60 * 24)).toString());
 		setHours(Math.floor((difference%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)).toString().padStart(2, '0')); 
 		setMinutes(Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0')); 
 		setSeconds(Math.floor((difference % (1000 * 60)) / 1000).toString().padStart(2, '0')); 

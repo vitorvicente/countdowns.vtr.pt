@@ -19,17 +19,15 @@ const App = ({ firebase }) => {
 		async function loadData() {
 			const countdownsDoc = await getDoc(firebase.config("countdowns"));
 			
-			if (countdownsDoc.exists()) {
+			if (countdownsDoc.exists())
 				setCountdowns(countdownsDoc.data());
-				return;
-			}
 		}
 		
 		loadData();
 	}, [firebase]);
 	
 	const CountDownCards = () => Object.entries(countdowns).sort((a, b) => b[1].timeCreated.toDate().getTime() - a[1].timeCreated.toDate().getTime()).map((item, index) => (
-			<Card key={index} title={item[1].title} timeCreated={item[1].timeCreated} timeEnds={item[1].timeEnds} description={item[1].description} />
+			<Card key={index} title={item[1].title} timeEnds={item[1].timeEnds} description={item[1].description} />
 		)
 	);
 
