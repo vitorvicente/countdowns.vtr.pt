@@ -35,7 +35,7 @@ const App = ({ firebase }) => {
 		<>
 			<VtrHeader />
 		
-			<Container>
+			<Container style={{minHeight: "50vh"}}>
 				<Row lg={2} md={2} sm={1} xl={2} xs={1}>
 					{!!countdowns && <CountDownCards />}
 				</Row>
